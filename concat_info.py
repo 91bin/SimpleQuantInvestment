@@ -2,6 +2,7 @@ import tqdm
 from functions import *
 
 def concat_info():
+    print("Concatenation started....")
     with open("./data/infos.json", "r") as st_json:
         infos = json.load(st_json)
 
@@ -81,6 +82,8 @@ def concat_info():
     df_out_current = df_out_current.sort_values(by = ['date', 'ticker'], ascending=[True, True])
     df_out_current = df_out_current.reset_index(drop=True)
     df_out_current.to_csv("./data/factors_current.csv", index=False)
+    print("Finished Concatenation!")
+
 
 if __name__ == "__main__":
     concat_info()

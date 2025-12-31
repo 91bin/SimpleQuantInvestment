@@ -8,6 +8,7 @@ from tqdm import tqdm
 from functions import *
 
 def collect_price_and_volume():
+    print("Collecting price and volume data... This will take long time...")
     with open('./data/ticker_cik_mapping.json', 'r', encoding='utf-8') as f:
         t_to_c = json.load(f)
 
@@ -32,6 +33,7 @@ def collect_price_and_volume():
 
     price_data.to_csv('./data/price.csv')
     volume_data.to_csv('./data/volume.csv')
+    print("Finished Collecting price and volume data...")
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@ from tqdm import tqdm
 from functions import *
 
 def make_simple_portfolio(cur_date):
+    print("Making Simple Portfolio...")
     # 특정 날짜 기준 PBR or PER 하위 10% 종목 찾기
     factor = 'pbr'
     df_factors_ = pd.read_csv("./data/factors_current.csv")
@@ -36,6 +37,8 @@ def make_simple_portfolio(cur_date):
     with open("./data/ticker_list.txt", 'w') as f:
         f.write(str(df_q["ticker"].to_numpy()))
     print(df_q["ticker"].to_numpy())
+    print("Finished Making Simple Portfolio!")
+
 
 def __init__():
     make_simple_portfolio(cur_date = "2025-12-26")

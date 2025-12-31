@@ -7,6 +7,7 @@ from functions import *
 
 
 def collect_financial_data():
+    print("Collecting financial data...")
     with open('./data/ticker_cik_mapping.json', 'r', encoding='utf-8') as f:
         t_to_c = json.load(f)
 
@@ -21,7 +22,7 @@ def collect_financial_data():
 
             # 여기에서 원하는 재무제표값 key 찾아서 입력...
             # EX) 총자본 & 당기순이익
-            # 총자본 - PBR 계산에 사용
+            # ex1) 총자본 - PBR 계산에 사용
             if 'StockholdersEquity' in financials.keys():
                 seq = financials['StockholdersEquity']['units']['USD']
             elif 'Equity' in financials:
@@ -29,13 +30,13 @@ def collect_financial_data():
             else:
                 seq = financials['StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest']['unit']['USD']
                 
-            # 당기순이익 - PER 계산에 사용
+            # ex2) 당기순이익 - PER 계산에 사용
             if 'NetIncomeLoss' in financials:
                 nil = financials['NetIncomeLoss']['units']['USD']
             else:
                 nil = financials['ProfitLoss']['units']['USD']
 
-            # 발행 주식수
+            # 반드시 필요! 발행 주식수
             stock_outs = []
             if 'CommonStockSharesOutstanding' in financials:
                 stock_outs.append(financials['CommonStockSharesOutstanding']['units']['shares'])
@@ -64,6 +65,8 @@ def collect_financial_data():
    
     with open("./data/infos.json", "w") as json_file:
         json.dump(infos, json_file)
+
+    print("Finished Collecting financial data!")
 
 if __name__ == "__main__":
     collect_financial_data()

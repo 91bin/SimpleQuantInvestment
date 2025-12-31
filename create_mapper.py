@@ -3,6 +3,7 @@ import json
 import pandas as pd
 
 def create_mapper():
+    print("Download mapper and create mapping file")
     url = "https://www.sec.gov/files/company_tickers.json"
 
     # SEC는 요청 시 반드시 이메일 주소나 식별자를 헤더에 포함해야 함
