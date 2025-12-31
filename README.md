@@ -5,24 +5,24 @@ simple portfolio maker. Using financial statesments
 
 
 사용 방법  
-1. 파이썬 설치  
+1\. 파이썬 설치  
 
-2. 가상환경 만들기  
+2\. 가상환경 만들기  
 현재 폴더에서 마우스 우클릭으로 window Powershell을 열고 다음 명령어 입력  
 python -m venv portfolio_maker  
 
-3. 가상황경 활성화  
+3\. 가상황경 활성화  
 다음 명령어 입력  
 .\portfolio_maker\Scripts\Activate.ps1  
 
 안될 시 다음 권한 활성화 명령어 입력 후 입력  
 Set-ExecutionPolicy RemoteSigned -Scope Process  
 
-4. requirements 패키지 설치  
+4\. requirements 패키지 설치  
 다음 명령어 입력  
 pip install -r requirements.txt  
 
-5. 재무 데이터 준비  
+5\. 재무 데이터 준비  
 아래 사이트 접속  
 https://www.sec.gov/search-filings/edgar-application-programming-interfaces  
 
@@ -48,7 +48,7 @@ https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip 클릭하�
     ㄴexe.ps1  
     ㄴ...  
 
-6. 전체 실행 코드 실행  
+6\. 전체 실행 코드 실행  
 인터넷이 연결된 환경에서 아래 명령어를 입력합니다. 약 4시간 정도 소요됩니다.  
 .\exe.ps1   
 
